@@ -11,7 +11,8 @@ namespace HUMAN_RESOURCES_v1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class EMPLEADO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,14 +24,31 @@ namespace HUMAN_RESOURCES_v1.Models
         }
     
         public int id_empleado { get; set; }
+        [Required]
+        [Display(Name = "Nombre")]
         public string nombre { get; set; }
+        [Required]
+        [Display(Name = "Apellido")]
         public string apellido { get; set; }
+        [Required]
+        [Display(Name = "Telefono")]
         public string telefono { get; set; }
+        [Required]
+        [Display(Name = "Departamento")]
         public int id_departamento { get; set; }
+        [Required]
+        [Display(Name = "Cargo/Funcion")]
         public int id_cargo { get; set; }
+        [Required]
+        [Display(Name = "Fecha Ingreso")]
         public System.DateTime fecha_ingreso { get; set; }
+        [Required]
+        [Display(Name = "Salario")]
         public decimal salario { get; set; }
+        [Required]
+        [Display(Name = "Estatus Empleado")]
         public string estatus { get; set; }
+        [Display(Name = "Salida Empleado")]
         public Nullable<int> id_salida_empleado { get; set; }
     
         public virtual CARGO CARGO { get; set; }

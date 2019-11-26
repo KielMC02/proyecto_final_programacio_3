@@ -11,13 +11,22 @@ namespace HUMAN_RESOURCES_v1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class VACACIONE
     {
         public int id_vacaciones { get; set; }
+        [Required]
+        [Display(Name = "Codigo del Empleado (ID)")]
         public int id_empleado { get; set; }
+        [Required]
+        [Display(Name = "Fecha Inicio de las Vacaciones")]
         public System.DateTime fecha_inicio_vacaciones { get; set; }
+        [Required]
+        [Display(Name = "Fecha Fin las Vacaciones")]
         public System.DateTime fecha_fin_vaciones { get; set; }
+        [Required]
+        [Display(Name = "Comentario de las Vacaciones")]
         public string comentario_vacaiones { get; set; }
     
         public virtual EMPLEADO EMPLEADO { get; set; }

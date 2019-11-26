@@ -11,11 +11,16 @@ namespace HUMAN_RESOURCES_v1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class NOMINA
     {
         public int id_codigo { get; set; }
+        [Required]
+        [Display(Name = "Fecha de La nomina")]
         public System.DateTime fecha_nomina { get; set; }
+        [Required]
+        [Display(Name = "Monto Total de la Nomina")]
         public decimal monto_total { get; set; }
     }
 }

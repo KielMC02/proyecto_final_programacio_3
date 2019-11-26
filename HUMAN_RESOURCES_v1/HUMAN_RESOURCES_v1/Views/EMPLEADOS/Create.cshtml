@@ -4,15 +4,16 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
+    <center>
+        <h3>Agregar Nuevo Empleado</h3>
+    </center>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>EMPLEADO</h4>
+        <h5>Llene el Formulario a continuacion</h5>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -40,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_departamento, "id_departamento", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_departamento, "Departamento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_departamento", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_departamento, "", new { @class = "text-danger" })
@@ -48,7 +49,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_cargo, "id_cargo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_cargo, "Cargo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_cargo", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_cargo, "", new { @class = "text-danger" })
@@ -79,17 +80,17 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.id_salida_empleado, "id_salida_empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.id_salida_empleado, "Codigo Salida Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("id_salida_empleado", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("Codigo Salida Empleado", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_salida_empleado, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Agregar" class="btn btn-success" />
             </div>
         </div>
     </div>

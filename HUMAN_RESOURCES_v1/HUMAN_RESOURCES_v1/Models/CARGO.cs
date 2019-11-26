@@ -11,7 +11,8 @@ namespace HUMAN_RESOURCES_v1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CARGO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,8 @@ namespace HUMAN_RESOURCES_v1.Models
         }
     
         public int id_cargo { get; set; }
+        [Required]
+        [Display(Name ="Nombre del Cargo")]
         public string nombre_cargo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

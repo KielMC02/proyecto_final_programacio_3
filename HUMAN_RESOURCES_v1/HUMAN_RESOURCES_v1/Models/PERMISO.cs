@@ -11,13 +11,22 @@ namespace HUMAN_RESOURCES_v1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PERMISO
     {
         public int id_permiso { get; set; }
+        [Required]
+        [Display(Name = "Codigo del Empleado (ID)")]
         public int id_empleado { get; set; }
+        [Required]
+        [Display(Name = "Fecha de Inicio del Permiso")]
         public System.DateTime fecha_inicio_permiso { get; set; }
+        [Required]
+        [Display(Name = "Fecha de Fin del Permiso")]
         public System.DateTime fecha_fin_permiso { get; set; }
+        [Required]
+        [Display(Name = "Comentario del Permiso (Descripcion)")]
         public string comentario_permiso { get; set; }
     
         public virtual EMPLEADO EMPLEADO { get; set; }

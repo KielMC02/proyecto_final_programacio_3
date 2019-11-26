@@ -127,7 +127,7 @@ Create table VACACIONES
 	fecha_fin_vaciones date not null,
 	comentario_vacaiones varchar(250) not null
 )
-alter table PERMISOS
+alter table VACACIONES
 add constraint FK_VACACIONES_EMPLEADOS foreign key (id_empleado) references EMPLEADOS(id_empleado)
 /*------------Insertar Registros-------------------*/
 /*------------------------------------------------*/

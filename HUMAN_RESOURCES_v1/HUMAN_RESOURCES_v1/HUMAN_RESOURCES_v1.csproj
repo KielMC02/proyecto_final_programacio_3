@@ -170,6 +170,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CARGOSController.cs" />
+    <Compile Include="Controllers\DEPARTAMENTOSController.cs" />
+    <Compile Include="Controllers\EMPLEADOSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -270,9 +273,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -293,6 +293,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\DEPARTAMENTOS\Create.cshtml" />
+    <Content Include="Views\DEPARTAMENTOS\Delete.cshtml" />
+    <Content Include="Views\DEPARTAMENTOS\Details.cshtml" />
+    <Content Include="Views\DEPARTAMENTOS\Edit.cshtml" />
+    <Content Include="Views\DEPARTAMENTOS\Index.cshtml" />
+    <Content Include="Views\CARGOS\Create.cshtml" />
+    <Content Include="Views\CARGOS\Delete.cshtml" />
+    <Content Include="Views\CARGOS\Details.cshtml" />
+    <Content Include="Views\CARGOS\Edit.cshtml" />
+    <Content Include="Views\CARGOS\Index.cshtml" />
+    <Content Include="Views\EMPLEADOS\Create.cshtml" />
+    <Content Include="Views\EMPLEADOS\Delete.cshtml" />
+    <Content Include="Views\EMPLEADOS\Details.cshtml" />
+    <Content Include="Views\EMPLEADOS\Edit.cshtml" />
+    <Content Include="Views\EMPLEADOS\Index.cshtml" />
+    <Content Include="Views\Home\Bienvenida.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -50,7 +50,7 @@ namespace HUMAN_RESOURCES_v1.Models
         public string estatus { get; set; }
         [Display(Name = "Salida Empleado")]
         public Nullable<int> id_salida_empleado { get; set; }
-    
+
         public virtual CARGO CARGO { get; set; }
         public virtual DEPARTAMENTO DEPARTAMENTO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -61,4 +61,5 @@ namespace HUMAN_RESOURCES_v1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VACACIONE> VACACIONES { get; set; }
     }
+    
 }

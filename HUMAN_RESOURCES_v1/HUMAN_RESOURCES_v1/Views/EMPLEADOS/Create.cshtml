@@ -1,8 +1,11 @@
 ﻿@model HUMAN_RESOURCES_v1.Models.EMPLEADO
 
+@using HUMAN_RESOURCES_v1.Models
+
 @{
     ViewBag.Title = "Create";
 }
+
 
     <center>
         <h3>Agregar Nuevo Empleado</h3>
@@ -59,7 +62,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.fecha_ingreso, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.fecha_ingreso, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.fecha_ingreso, new { htmlAttributes = new { @class = "form-control",@type="date" } })
+
                 @Html.ValidationMessageFor(model => model.fecha_ingreso, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -75,7 +79,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.estatus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.estatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.estatus,new SelectList(new[] {"ACTIVO","INACTIVO" }),"Seleccione un Estatus", htmlAttributes: new { @class="form-control"})
                 @Html.ValidationMessageFor(model => model.estatus, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -96,8 +100,9 @@
     </div>
 }
 
+
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver a la Lista", "Index",null,htmlAttributes: new { @class="btn btn-danger"})
 </div>
 
 @section Scripts {

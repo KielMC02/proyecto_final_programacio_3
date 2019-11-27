@@ -3,11 +3,12 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+    <center>
+        <h3>Lsitado de Cargos</h3>
+    </center>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo Cargo", "Create",null,htmlAttributes:new { @class="btn btn-primary"})
 </p>
 <table class="table">
     <tr>
@@ -22,10 +23,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.nombre_cargo)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_cargo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_cargo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_cargo })
+        <td class="btn-group">
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_cargo },htmlAttributes:new {@class="btn btn-primary" })
+            @Html.ActionLink("Details", "Details", new { id=item.id_cargo },htmlAttributes:new {@class="btn btn-success" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_cargo },htmlAttributes:new {@class="btn btn-danger" })
         </td>
     </tr>
 }

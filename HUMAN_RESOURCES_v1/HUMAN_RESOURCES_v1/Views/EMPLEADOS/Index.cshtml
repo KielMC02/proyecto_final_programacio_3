@@ -4,78 +4,84 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h3>Listado de Empleados</h3>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo Empleado", "Create",null,htmlAttributes:new {@class="btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha_ingreso)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.salario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estatus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CARGO.nombre_cargo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DEPARTAMENTO.nombre_departamento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SALIDA_EMPLEADOS.tipo_salida)
-        </th>
-        <th></th>
-    </tr>
+<div class="table-responsive">
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.nombre)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.apellido)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.telefono)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.fecha_ingreso)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.salario)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.estatus)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.CARGO.nombre_cargo)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.DEPARTAMENTO.nombre_departamento)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.SALIDA_EMPLEADOS.tipo_salida)
+                </th>
+                <th>Funciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fecha_ingreso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.salario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CARGO.nombre_cargo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DEPARTAMENTO.nombre_departamento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SALIDA_EMPLEADOS.tipo_salida)
+                    </td>
+                    <td class="btn-group btn-group-sm col-lg-3">
+                        @Html.ActionLink("Editar", "Edit", new { id = item.id_empleado }, htmlAttributes: new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Detalles", "Details", new { id = item.id_empleado }, htmlAttributes: new { @class = "btn btn-success" })
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.id_empleado }, htmlAttributes: new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_ingreso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.salario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CARGO.nombre_cargo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DEPARTAMENTO.nombre_departamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SALIDA_EMPLEADOS.tipo_salida)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_empleado }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_empleado }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_empleado })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+</div>

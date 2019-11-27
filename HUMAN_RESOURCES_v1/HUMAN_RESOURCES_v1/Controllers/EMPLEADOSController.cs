@@ -26,7 +26,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             EMPLEADO eMPLEADO = db.EMPLEADOS.Find(id);
             if (eMPLEADO == null)
@@ -70,7 +70,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             EMPLEADO eMPLEADO = db.EMPLEADOS.Find(id);
             if (eMPLEADO == null)
@@ -107,7 +107,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             EMPLEADO eMPLEADO = db.EMPLEADOS.Find(id);
             if (eMPLEADO == null)

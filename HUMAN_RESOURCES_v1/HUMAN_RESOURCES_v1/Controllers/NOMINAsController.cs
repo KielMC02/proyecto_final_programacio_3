@@ -10,107 +10,111 @@ using HUMAN_RESOURCES_v1.Models;
 
 namespace HUMAN_RESOURCES_v1.Controllers
 {
-    public class DEPARTAMENTOSController : Controller
+    public class NOMINAsController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
+
+        // GET: NOMINAs
         [Authorize]
-        // GET: DEPARTAMENTOS
         public ActionResult Index()
         {
-            return View(db.DEPARTAMENTOS.ToList());
+            return View(db.NOMINAS.ToList());
         }
 
-        // GET: DEPARTAMENTOS/Details/5
+        // GET: NOMINAs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DEPARTAMENTO dEPARTAMENTO = db.DEPARTAMENTOS.Find(id);
-            if (dEPARTAMENTO == null)
+            NOMINA nOMINA = db.NOMINAS.Find(id);
+            if (nOMINA == null)
             {
                 return HttpNotFound();
             }
-            return View(dEPARTAMENTO);
+            return View(nOMINA);
         }
 
-        // GET: DEPARTAMENTOS/Create
+        // GET: NOMINAs/Create
         public ActionResult Create()
         {
+            var salarios = from x in db.EMPLEADOS
+                              select x;
+            ViewBag.Salarios_Total = salarios.Sum(z => z.salario);
             return View();
         }
 
-        // POST: DEPARTAMENTOS/Create
+        // POST: NOMINAs/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_departamento,nombre_departamento")] DEPARTAMENTO dEPARTAMENTO)
+        public ActionResult Create([Bind(Include = "id_codigo,fecha_nomina,monto_total")] NOMINA nOMINA)
         {
             if (ModelState.IsValid)
             {
-                db.DEPARTAMENTOS.Add(dEPARTAMENTO);
+                db.NOMINAS.Add(nOMINA);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(dEPARTAMENTO);
+            return View(nOMINA);
         }
 
-        // GET: DEPARTAMENTOS/Edit/5
+        // GET: NOMINAs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DEPARTAMENTO dEPARTAMENTO = db.DEPARTAMENTOS.Find(id);
-            if (dEPARTAMENTO == null)
+            NOMINA nOMINA = db.NOMINAS.Find(id);
+            if (nOMINA == null)
             {
                 return HttpNotFound();
             }
-            return View(dEPARTAMENTO);
+            return View(nOMINA);
         }
 
-        // POST: DEPARTAMENTOS/Edit/5
+        // POST: NOMINAs/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_departamento,nombre_departamento")] DEPARTAMENTO dEPARTAMENTO)
+        public ActionResult Edit([Bind(Include = "id_codigo,fecha_nomina,monto_total")] NOMINA nOMINA)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(dEPARTAMENTO).State = EntityState.Modified;
+                db.Entry(nOMINA).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(dEPARTAMENTO);
+            return View(nOMINA);
         }
 
-        // GET: DEPARTAMENTOS/Delete/5
+        //GET: NOMINAs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DEPARTAMENTO dEPARTAMENTO = db.DEPARTAMENTOS.Find(id);
-            if (dEPARTAMENTO == null)
+            NOMINA nOMINA = db.NOMINAS.Find(id);
+            if (nOMINA == null)
             {
                 return HttpNotFound();
             }
-            return View(dEPARTAMENTO);
+            return View(nOMINA);
         }
 
-        // POST: DEPARTAMENTOS/Delete/5
+        // POST: NOMINAs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DEPARTAMENTO dEPARTAMENTO = db.DEPARTAMENTOS.Find(id);
-            db.DEPARTAMENTOS.Remove(dEPARTAMENTO);
+            NOMINA nOMINA = db.NOMINAS.Find(id);
+            db.NOMINAS.Remove(nOMINA);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

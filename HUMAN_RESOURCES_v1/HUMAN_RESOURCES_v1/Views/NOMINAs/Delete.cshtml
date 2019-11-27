@@ -1,0 +1,40 @@
+﻿@model HUMAN_RESOURCES_v1.Models.NOMINA
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Nomina</h2>
+
+<h3>Esta Seguro de Eliminar esta Nomina?</h3>
+<div>
+    <h4>Nomina Seleccionada</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_nomina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_nomina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.monto_total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.monto_total)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        @Html.ActionLink("Volver a la Lista", "Index",null,htmlAttributes:new {@class="btn btn-danger" })
+    </div>
+    }
+</div>

@@ -26,7 +26,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             CARGO cARGO = db.CARGOS.Find(id);
             if (cARGO == null)
@@ -64,7 +64,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return  RedirectToAction("Index");
             }
             CARGO cARGO = db.CARGOS.Find(id);
             if (cARGO == null)
@@ -95,7 +95,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             CARGO cARGO = db.CARGOS.Find(id);
             if (cARGO == null)

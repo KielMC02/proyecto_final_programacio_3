@@ -78,6 +78,7 @@
                         @Html.ActionLink("Editar", "Edit", new { id = item.id_empleado }, htmlAttributes: new { @class = "btn btn-warning" })
                         @Html.ActionLink("Detalles", "Details", new { id = item.id_empleado }, htmlAttributes: new { @class = "btn btn-success" })
                         @Html.ActionLink("Eliminar", "Delete", new { id = item.id_empleado }, htmlAttributes: new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Dar Salida","Create","SALIDA_EMPLEADOS",new { id = item.id_empleado },htmlAttributes: new { @class = "btn btn-info" })
                     </td>
                 </tr>
             }

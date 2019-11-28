@@ -20,12 +20,12 @@ namespace HUMAN_RESOURCES_v1.Models
         {
             this.EMPLEADOS = new HashSet<EMPLEADO>();
         }
-    
+
         public int id_cargo { get; set; }
         [Required]
-        [Display(Name ="Nombre del Cargo")]
+        [Display(Name = "Nombre del Cargo")]
         public string nombre_cargo { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EMPLEADO> EMPLEADOS { get; set; }
     }

@@ -3,32 +3,35 @@
 @{
     ViewBag.Title = "Index";
 }
-    <center>
-        <h3>Lsitado de Cargos</h3>
-    </center>
+<center>
+    <h3>Lsitado de Cargos</h3>
+</center>
 
 <p>
-    @Html.ActionLink("Crear Nuevo Cargo", "Create",null,htmlAttributes:new { @class="btn btn-primary"})
+    @Html.ActionLink("Crear Nuevo Cargo", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre_cargo)
-        </th>
-        <th></th>
-    </tr>
+<div class="table-responsive">
+    <table class="table table-condensed">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_cargo)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre_cargo)
-        </td>
-        <td class="btn-group">
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_cargo },htmlAttributes:new {@class="btn btn-warning" })
-            @Html.ActionLink("Details", "Details", new { id=item.id_cargo },htmlAttributes:new {@class="btn btn-success" })
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_cargo },htmlAttributes:new {@class="btn btn-danger" })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_cargo)
+                </td>
+                <td class="btn-group">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id_cargo }, htmlAttributes: new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Detalles", "Details", new { id = item.id_cargo }, htmlAttributes: new { @class = "btn btn-success" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id_cargo }, htmlAttributes: new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>

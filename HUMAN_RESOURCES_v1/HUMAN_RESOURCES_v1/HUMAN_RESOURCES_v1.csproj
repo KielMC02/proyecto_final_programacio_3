@@ -176,6 +176,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NOMINAsController.cs" />
+    <Compile Include="Controllers\SALIDA_EMPLEADOSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -315,6 +316,11 @@
     <Content Include="Views\NOMINAs\Details.cshtml" />
     <Content Include="Views\NOMINAs\Edit.cshtml" />
     <Content Include="Views\NOMINAs\Index.cshtml" />
+    <Content Include="Views\SALIDA_EMPLEADOS\Create.cshtml" />
+    <Content Include="Views\SALIDA_EMPLEADOS\Delete.cshtml" />
+    <Content Include="Views\SALIDA_EMPLEADOS\Details.cshtml" />
+    <Content Include="Views\SALIDA_EMPLEADOS\Edit.cshtml" />
+    <Content Include="Views\SALIDA_EMPLEADOS\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

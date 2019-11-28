@@ -68,6 +68,7 @@
     <EntitySetMapping Name="SALIDA_EMPLEADOS">
       <EntityTypeMapping TypeName="HUMAN_RESOURCESModel.SALIDA_EMPLEADOS">
         <MappingFragment StoreEntitySet="SALIDA_EMPLEADOS">
+          <ScalarProperty Name="feha_salida" ColumnName="feha_salida" />
           <ScalarProperty Name="id_salida_empleado" ColumnName="id_salida_empleado" />
           <ScalarProperty Name="id_emplado" ColumnName="id_emplado" />
           <ScalarProperty Name="tipo_salida" ColumnName="tipo_salida" />

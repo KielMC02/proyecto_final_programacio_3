@@ -26,7 +26,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             NOMINA nOMINA = db.NOMINAS.Find(id);
             if (nOMINA == null)
@@ -67,7 +67,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             NOMINA nOMINA = db.NOMINAS.Find(id);
             if (nOMINA == null)
@@ -98,7 +98,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             NOMINA nOMINA = db.NOMINAS.Find(id);
             if (nOMINA == null)

@@ -76,6 +76,7 @@
     <Property Name="id_emplado" Type="Int32" Nullable="false" />
     <Property Name="tipo_salida" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="EMPLEADOS" Relationship="Self.FK_SALIDA_EMPLEADOS" FromRole="SALIDA_EMPLEADOS" ToRole="EMPLEADOS" />
+    <Property Name="feha_salida" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
   <EntityType Name="VACACIONE">
     <Key>

@@ -65,6 +65,7 @@
     <Property Name="id_salida_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_emplado" Type="int" Nullable="false" />
     <Property Name="tipo_salida" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="feha_salida" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="VACACIONES">
     <Key>

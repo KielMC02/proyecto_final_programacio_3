@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HUMAN_RESOURCES_v1.Models.SALIDA_EMPLEADOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_emplado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_salida)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_emplado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_salida)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_salida_empleado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_salida_empleado }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_salida_empleado })
+        </td>
+    </tr>
+}
+
+</table>

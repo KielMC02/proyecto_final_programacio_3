@@ -28,7 +28,7 @@ namespace HUMAN_RESOURCES_v1.Models
         [Required]
         [Display(Name = "Comentario de las Vacaciones")]
         public string comentario_vacaiones { get; set; }
-    
+
         public virtual EMPLEADO EMPLEADO { get; set; }
     }
 }

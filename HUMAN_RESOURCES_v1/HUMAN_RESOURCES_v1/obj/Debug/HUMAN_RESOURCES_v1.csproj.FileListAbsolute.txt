@@ -110,8 +110,8 @@ C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RE
 C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
 C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
-C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\obj\Debug\HUMAN_RESOURCES_v1.csprojAssemblyReference.cache
 C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\obj\Debug\HUMAN_RESOURCES_v1.csproj.CoreCompileInputs.cache
 C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\obj\Debug\HUMAN_RESOURCES_v1.csproj.CopyComplete
 C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\obj\Debug\HUMAN_RESOURCES_v1.dll
 C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\obj\Debug\HUMAN_RESOURCES_v1.pdb
+C:\Users\ewin mendez\source\repos\KielMC02\proyecto_final_programacio_3\HUMAN_RESOURCES_v1\HUMAN_RESOURCES_v1\obj\Debug\HUMAN_RESOURCES_v1.csprojAssemblyReference.cache

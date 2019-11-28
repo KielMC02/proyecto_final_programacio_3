@@ -70,6 +70,7 @@
           <Property Name="id_salida_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_emplado" Type="int" Nullable="false" />
           <Property Name="tipo_salida" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="feha_salida" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="VACACIONES">
           <Key>
@@ -267,6 +268,7 @@
           <Property Name="id_emplado" Type="Int32" Nullable="false" />
           <Property Name="tipo_salida" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="EMPLEADOS" Relationship="Self.FK_SALIDA_EMPLEADOS" FromRole="SALIDA_EMPLEADOS" ToRole="EMPLEADOS" />
+          <Property Name="feha_salida" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="VACACIONE">
           <Key>
@@ -458,6 +460,7 @@
           <EntitySetMapping Name="SALIDA_EMPLEADOS">
             <EntityTypeMapping TypeName="HUMAN_RESOURCESModel.SALIDA_EMPLEADOS">
               <MappingFragment StoreEntitySet="SALIDA_EMPLEADOS">
+                <ScalarProperty Name="feha_salida" ColumnName="feha_salida" />
                 <ScalarProperty Name="id_salida_empleado" ColumnName="id_salida_empleado" />
                 <ScalarProperty Name="id_emplado" ColumnName="id_emplado" />
                 <ScalarProperty Name="tipo_salida" ColumnName="tipo_salida" />

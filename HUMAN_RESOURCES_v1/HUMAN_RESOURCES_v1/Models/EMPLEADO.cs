@@ -22,7 +22,7 @@ namespace HUMAN_RESOURCES_v1.Models
             this.PERMISOS = new HashSet<PERMISO>();
             this.VACACIONES = new HashSet<VACACIONE>();
         }
-    
+
         public int id_empleado { get; set; }
         [Required]
         [Display(Name = "Nombre")]
@@ -61,5 +61,5 @@ namespace HUMAN_RESOURCES_v1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VACACIONE> VACACIONES { get; set; }
     }
-    
+
 }

@@ -22,12 +22,11 @@ namespace HUMAN_RESOURCES_v1.Models
         }
     
         public int id_salida_empleado { get; set; }
-        [Required]
-        [Display(Name = "Codigo del Empleado (ID)")]
         public int id_emplado { get; set; }
-        [Required]
-        [Display(Name = "Tipo de Salida")]
+        [Display(Name="Tipo de Salida")]
         public string tipo_salida { get; set; }
+        [Display(Name="Fecha de Salida")]
+        public System.DateTime feha_salida { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EMPLEADO> EMPLEADOS { get; set; }

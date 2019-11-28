@@ -31,7 +31,7 @@ namespace HUMAN_RESOURCES_v1.Models
         [Required]
         [Display(Name = "Comentario de la Licencia")]
         public string comentario_varchar { get; set; }
-    
+
         public virtual EMPLEADO EMPLEADO { get; set; }
     }
 }

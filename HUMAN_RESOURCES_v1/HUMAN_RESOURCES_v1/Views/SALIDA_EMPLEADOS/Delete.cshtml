@@ -1,0 +1,48 @@
+﻿@model HUMAN_RESOURCES_v1.Models.SALIDA_EMPLEADOS
+
+@{
+    ViewBag.Title = "Delete";
+}
+    <center>
+        <h2>Borrar Salida</h2>
+        <p class="text-danger text-capitalize focus">
+            Recuerde que si desea eliminar la salida del Empleado primero debe
+            Eliminar el Empleado, si el problema persiste contacte su administrador.
+        </p>
+        <h4>¿Esta Seguro que desea Eliminar este registro?</h4>
+    </center>
+        <div>
+            <h5>Salida Seleccionada:</h5>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.id_emplado)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.id_emplado)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tipo_salida)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tipo_salida)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <div class="btn-group">
+                        <input type="submit" value="Eliminar" class="btn btn-danger" />
+                        @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-success" })
+                    </div>
+                </div>
+            }
+        </div>
+

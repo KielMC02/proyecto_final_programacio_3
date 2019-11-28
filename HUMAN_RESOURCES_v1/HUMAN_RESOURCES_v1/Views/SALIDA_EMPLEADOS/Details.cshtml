@@ -1,0 +1,34 @@
+﻿@model HUMAN_RESOURCES_v1.Models.SALIDA_EMPLEADOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SALIDA_EMPLEADOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_emplado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_emplado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_salida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_salida)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_salida_empleado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

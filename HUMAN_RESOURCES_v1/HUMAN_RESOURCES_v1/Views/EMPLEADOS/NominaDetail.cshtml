@@ -1,0 +1,30 @@
+﻿@model IEnumerable<HUMAN_RESOURCES_v1.Models.NOMINA>
+
+@{
+    ViewBag.Title = "NominaDetail";
+
+}
+
+<h2>RESULTADOS DE LA BUSQUEDA</h2>
+<br />
+<br />
+<br />
+<br />
+<td>
+    <h3>TOTAL DE LA NOMINA EN PESOS DOMINICANOS (DOP)</h3>
+</td>
+
+<table class="table">
+    <tr>
+
+        <th>
+            <strong>RD$:<b></b> @ViewData["data"].00</strong>
+        </th>
+        <th></th>
+    </tr>
+
+
+</table>
+<div>
+    @Html.ActionLink("IR A NOMINAS", "Index", "NOMINAs", null, htmlAttributes: new { @class = "btn btn-success" })
+</div>

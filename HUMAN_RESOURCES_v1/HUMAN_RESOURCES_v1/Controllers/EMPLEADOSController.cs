@@ -136,5 +136,12 @@ namespace HUMAN_RESOURCES_v1.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult NominaDetail()
+        {
+            var eMPLEADOS = db.NOMINAS.Sum(e => e.monto_total).ToString();
+            ViewData["data"] = eMPLEADOS;
+            return View();
+        }
+        
     }
 }

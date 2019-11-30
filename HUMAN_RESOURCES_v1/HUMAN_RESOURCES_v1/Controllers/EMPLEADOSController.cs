@@ -183,8 +183,25 @@ namespace HUMAN_RESOURCES_v1.Controllers
                 lista = lista.Where(a => a.DEPARTAMENTO.nombre_departamento.Contains(Depbusqueda));
                 return View(lista);
             }
+        }
+
+
+
+
+        public ActionResult InactivoEmp()
+        {
+
+            var lista2 = from x in db.EMPLEADOS
+                         select x;
+
+            lista2 = lista2.Where(a => a.estatus.Equals("INACTIVO"));
+            return View(lista2);
 
 
         }
+
+
+
+
     }
 }

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<HUMAN_RESOURCES_v1.Models.EMPLEADO>
+
+@{
+    ViewBag.Title = "InactivoEmp";
+}
+
+    <h2 class="alert-info">FILTRO DE EMPLEADOS "INACTIVOS".</h2>
+<br />
+<br />
+<br />
+
+<table class="table">
+    <tr>
+        <th class="btn-warning ">
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th class="btn-warning ">
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th class="btn-warning ">
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th class="btn-warning ">
+            @Html.DisplayNameFor(model => model.fecha_ingreso)
+        </th>
+        <th class="btn-warning ">
+            @Html.DisplayNameFor(model => model.salario)
+        </th>
+        <th class="btn-danger ">
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th class="btn-warning ">
+            @Html.DisplayNameFor(model => model.CARGO.nombre_cargo)
+        </th>
+        <th class="btn-warning ">
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO.nombre_departamento)
+        </th>
+        <th class="btn-danger ">
+            @Html.DisplayNameFor(model => model.SALIDA_EMPLEADOS.tipo_salida)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_ingreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CARGO.nombre_cargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPARTAMENTO.nombre_departamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALIDA_EMPLEADOS.tipo_salida)
+        </td>
+       
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("VOLVER A LA LISTA", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
+</p>

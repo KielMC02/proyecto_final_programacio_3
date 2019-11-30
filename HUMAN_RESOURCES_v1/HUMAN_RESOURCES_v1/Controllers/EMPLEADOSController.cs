@@ -142,6 +142,49 @@ namespace HUMAN_RESOURCES_v1.Controllers
             ViewData["data"] = eMPLEADOS;
             return View();
         }
-        
+
+
+
+        public ActionResult ActivosEmp()
+        {
+           
+            var lista2 = from x in db.EMPLEADOS
+                        select x;
+
+            lista2 = lista2.Where(a => a.estatus.Equals("ACTIVO"));
+            return View(lista2);
+
+          
+        }
+
+        [HttpPost]
+        public ActionResult ActivosEmp(string Nombusqueda, string Depbusqueda)
+        {
+
+
+            var lista = from x in db.EMPLEADOS
+                        select x;
+            var lista2 = from y in db.EMPLEADOS
+                         select y;
+
+            if (string.IsNullOrEmpty(Nombusqueda) && string.IsNullOrEmpty(Depbusqueda))
+            {
+                return View(db.EMPLEADOS.ToList());
+            }
+            else if (Nombusqueda != null)
+            {
+                lista2 = lista2.Where(a => a.nombre.Contains(Nombusqueda));
+                return View(lista2);
+
+            }
+
+            else
+            {
+                lista = lista.Where(a => a.DEPARTAMENTO.nombre_departamento.Contains(Depbusqueda));
+                return View(lista);
+            }
+
+
+        }
     }
 }

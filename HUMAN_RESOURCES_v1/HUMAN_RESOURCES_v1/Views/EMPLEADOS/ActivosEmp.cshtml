@@ -1,0 +1,109 @@
+﻿@model IEnumerable<HUMAN_RESOURCES_v1.Models.EMPLEADO>
+
+@{
+    ViewBag.Title = "ActivosEmp";
+}
+
+<h2 class="alert-info">FILTRO DE EMPLEADOS "ACTIVOS" MEDIANTE "NOMBRE O DEPARTAMENTO"</h2>
+
+<br />
+<br />
+<br />
+
+<table>
+    <tr>
+        <th class="col-md-8">
+            <label class="alert-success">BUSCAR MEDIANTE NOMBRE</label><br /><br />
+            <form method="post">
+                <input type="text" name="Nombusqueda" placeholder="NOMBRE A BUSCAR" />
+                <input type="submit" value="BUSCAR" class="btn-warning" />
+            </form>
+            <br />
+        </th>
+        <th>
+            <label class="alert-success">BUSCAR MEDIANTE EL DEPARTAMENTO</label><br /><br />
+            <form method="post">
+                <input type="text" name="Depbusqueda" placeholder="NOMBRE DEL DEPARTAMENTO" />
+                <input type="submit" value="BUSCAR" class="btn-warning" />
+            </form>
+            <br />
+        </th>
+    </tr>
+</table>
+
+<br />
+<br />
+
+<table class="table table-responsive table-bordered">
+    <tr>
+        <th class="bg-primary">
+            <P>CODIGO</P>
+        </th>
+        <th class="bg-primary">
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th class="bg-primary">
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th class="bg-primary">
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th class="bg-primary">
+            @Html.DisplayNameFor(model => model.fecha_ingreso)
+        </th>
+        <th class="bg-primary">
+            @Html.DisplayNameFor(model => model.salario)
+        </th>
+        <th class="bg-primary">
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th class="bg-primary">
+            @Html.DisplayNameFor(model => model.CARGO.nombre_cargo)
+        </th>
+        <th class="bg-primary">
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO.nombre_departamento)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_empleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_ingreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CARGO.nombre_cargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTAMENTO.nombre_departamento)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("LISTA DE EMPLEADOS", "Index", null, htmlAttributes: new { @class = "btn btn-success" })
+</p>

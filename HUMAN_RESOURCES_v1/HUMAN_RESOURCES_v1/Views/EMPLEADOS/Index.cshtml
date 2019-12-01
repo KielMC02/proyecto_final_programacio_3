@@ -10,21 +10,45 @@
 
 <table>
     <tr>
-        <th class="col-md-4">
+        <th class="col-md-pull-4">
             <p>
-                @Html.ActionLink("CREAR NUEVO EMPLEADO", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
+                @Html.ActionLink("CREAR EMPLEADO", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
             </p>
 
 
         </th>
-        <th class="col-md-4">
+        <th class="col-md-pull-4">
             <p>
-                @Html.ActionLink("IR A EMPLEADOS ACTIVOS", "ActivosEmp", null, htmlAttributes: new { @class = "btn btn-success" })
+                @Html.ActionLink("EMPLEADOS ACTIVOS", "ActivosEmp", null, htmlAttributes: new { @class = "btn btn-success" })
             </p>
         </th>
         <th class="col-md-4">
             <p>
-                @Html.ActionLink("IR A EMPLEADOS INACTIVOS", "InactivoEmp", null, htmlAttributes: new { @class = "btn btn-warning" })
+                @Html.ActionLink("EMPLEADOS INACTIVOS", "InactivoEmp", null, htmlAttributes: new { @class = "btn btn-danger " })
+            </p>
+        </th>
+
+    </tr>
+</table>
+
+<br />
+<br />
+
+<table>
+    <tr>
+        <th class="col-md-pull-4">
+            <p>
+                @Html.ActionLink("ASIGNAR VACACIONES", "Index", "VACACIONES", null, htmlAttributes: new { @class = "btn btn-info" })
+            </p>
+        </th>
+        <th class="col-md-4">
+            <p>
+                @Html.ActionLink("ASIGNAR - LICENCIA", "Index", "LICENCIAS", null, htmlAttributes: new { @class = "btn btn-warning" })
+            </p>
+        </th>
+        <th class="col-md-4">
+            <p>
+                @Html.ActionLink("ASIGNAR - PERMISOS", "Index", "PERMISOS", null, htmlAttributes: new { @class = "btn btn-warning" })
             </p>
         </th>
     </tr>

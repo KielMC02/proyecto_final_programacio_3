@@ -14,13 +14,13 @@ namespace HUMAN_RESOURCES_v1.Controllers
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
 
-        // GET: SALIDA_EMPLEADOS
+       
         public ActionResult Index()
         {
             return View(db.SALIDA_EMPLEADOS.ToList());
         }
 
-        // GET: SALIDA_EMPLEADOS/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,7 +35,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
             return View(sALIDA_EMPLEADOS);
         }
 
-        // GET: SALIDA_EMPLEADOS/Create
+        
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -52,9 +52,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
             return View();
         }
 
-        // POST: SALIDA_EMPLEADOS/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id_salida_empleado,id_emplado,tipo_salida")] SALIDA_EMPLEADOS sALIDA_EMPLEADOS)
@@ -86,9 +84,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
             return View(sALIDA_EMPLEADOS);
         }
 
-        // POST: SALIDA_EMPLEADOS/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id_salida_empleado,id_emplado,tipo_salida")] SALIDA_EMPLEADOS sALIDA_EMPLEADOS)

@@ -1,0 +1,60 @@
+﻿@model HUMAN_RESOURCES_v1.Models.VACACIONE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>ESTA SEGURO QUE DESEA ELIMINAR ESTE REGISTRO </h3>
+<h5>RECUERDE QUE NO HAY RECUPERACION DE DATOS</h5>
+
+<br />
+<br />
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_inicio_vacaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inicio_vacaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_fin_vaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_fin_vaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario_vacaiones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario_vacaiones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLEADO.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLEADO.nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="ELIMINAR" class="btn btn-danger" /> |
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-primary" })
+</div>
+    }
+</div>

@@ -4,19 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-
-<h2>CREACION DE LICENCIA PARA EMPLEADOS</h2>
-
-<br />
-<br />
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("CREAR LICENCIA", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
+    @Html.ActionLink("Create New", "Create")
 </p>
-
-<br />
-<br />
-
 <table class="table">
     <tr>
         <th>
@@ -37,34 +29,29 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.fecha_inicio_licencia)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.fecha_fin_licencia)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.motivo_licencia)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.comentario_varchar)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EMPLEADO.nombre)
-    </td>
-    <td class="btn-group btn-group-sm col-lg-3">
-        @Html.ActionLink("Editar", "Edit", new { id = item.id_licencia }, htmlAttributes: new { @class = "btn btn-warning" })
-        @Html.ActionLink("Detalles", "Details", new { id = item.id_licencia }, htmlAttributes: new { @class = "btn btn-success" })
-        @Html.ActionLink("Eliminar", "Delete", new { id = item.id_licencia }, htmlAttributes: new { @class = "btn btn-danger" })
-      
-    </td>
-</tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_inicio_licencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_fin_licencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.motivo_licencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comentario_varchar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPLEADO.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_licencia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_licencia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_licencia })
+        </td>
+    </tr>
+}
 
 </table>
-<p>
-    @Html.ActionLink("VOLVER A LA LISTA", "Index", "EMPLEADOS", null, htmlAttributes: new { @class = "btn btn-danger" })
-</p>

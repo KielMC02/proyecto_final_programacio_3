@@ -10,111 +10,112 @@ using HUMAN_RESOURCES_v1.Models;
 
 namespace HUMAN_RESOURCES_v1.Controllers
 {
-    public class NOMINASController : Controller
+    public class VACACIONEsController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
 
-        // GET: NOMINAs
-        [Authorize]
+        // GET: VACACIONEs
         public ActionResult Index()
         {
-            return View(db.NOMINAS.ToList());
+            var vACACIONES = db.VACACIONES.Include(v => v.EMPLEADO);
+            return View(vACACIONES.ToList());
         }
 
-        // GET: NOMINAs/Details/5
+        // GET: VACACIONEs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NOMINA nOMINA = db.NOMINAS.Find(id);
-            if (nOMINA == null)
+            VACACIONE vACACIONE = db.VACACIONES.Find(id);
+            if (vACACIONE == null)
             {
                 return HttpNotFound();
             }
-            return View(nOMINA);
+            return View(vACACIONE);
         }
 
-        // GET: NOMINAs/Create
+        // GET: VACACIONEs/Create
         public ActionResult Create()
         {
-            var salarios = from x in db.EMPLEADOS
-                              select x;
-            ViewBag.Salarios_Total = salarios.Sum(z => z.salario);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre");
             return View();
         }
 
-        // POST: NOMINAs/Create
+        // POST: VACACIONEs/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_codigo,fecha_nomina,monto_total")] NOMINA nOMINA)
+        public ActionResult Create([Bind(Include = "id_vacaciones,id_empleado,fecha_inicio_vacaciones,fecha_fin_vaciones,comentario_vacaiones")] VACACIONE vACACIONE)
         {
             if (ModelState.IsValid)
             {
-                db.NOMINAS.Add(nOMINA);
+                db.VACACIONES.Add(vACACIONE);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(nOMINA);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", vACACIONE.id_empleado);
+            return View(vACACIONE);
         }
 
-        // GET: NOMINAs/Edit/5
+        // GET: VACACIONEs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NOMINA nOMINA = db.NOMINAS.Find(id);
-            if (nOMINA == null)
+            VACACIONE vACACIONE = db.VACACIONES.Find(id);
+            if (vACACIONE == null)
             {
                 return HttpNotFound();
             }
-            return View(nOMINA);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", vACACIONE.id_empleado);
+            return View(vACACIONE);
         }
 
-        // POST: NOMINAs/Edit/5
+        // POST: VACACIONEs/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_codigo,fecha_nomina,monto_total")] NOMINA nOMINA)
+        public ActionResult Edit([Bind(Include = "id_vacaciones,id_empleado,fecha_inicio_vacaciones,fecha_fin_vaciones,comentario_vacaiones")] VACACIONE vACACIONE)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nOMINA).State = EntityState.Modified;
+                db.Entry(vACACIONE).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(nOMINA);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", vACACIONE.id_empleado);
+            return View(vACACIONE);
         }
 
-        //GET: NOMINAs/Delete/5
+        // GET: VACACIONEs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NOMINA nOMINA = db.NOMINAS.Find(id);
-            if (nOMINA == null)
+            VACACIONE vACACIONE = db.VACACIONES.Find(id);
+            if (vACACIONE == null)
             {
                 return HttpNotFound();
             }
-            return View(nOMINA);
+            return View(vACACIONE);
         }
 
-        // POST: NOMINAs/Delete/5
+        // POST: VACACIONEs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            NOMINA nOMINA = db.NOMINAS.Find(id);
-            db.NOMINAS.Remove(nOMINA);
+            VACACIONE vACACIONE = db.VACACIONES.Find(id);
+            db.VACACIONES.Remove(vACACIONE);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

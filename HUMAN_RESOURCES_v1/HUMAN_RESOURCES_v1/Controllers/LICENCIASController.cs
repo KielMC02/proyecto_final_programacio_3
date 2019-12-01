@@ -14,14 +14,14 @@ namespace HUMAN_RESOURCES_v1.Controllers
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
 
-        // GET: LICENCIAS
+        // GET: LICENCIAs
         public ActionResult Index()
         {
             var lICENCIAS = db.LICENCIAS.Include(l => l.EMPLEADO);
             return View(lICENCIAS.ToList());
         }
 
-        // GET: LICENCIAS/Details/5
+        // GET: LICENCIAs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,16 +36,16 @@ namespace HUMAN_RESOURCES_v1.Controllers
             return View(lICENCIA);
         }
 
-        // GET: LICENCIAS/Create
+        // GET: LICENCIAs/Create
         public ActionResult Create()
         {
             ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre");
             return View();
         }
 
-        // POST: LICENCIAS/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: LICENCIAs/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id_licencia,id_empleado,fecha_inicio_licencia,fecha_fin_licencia,motivo_licencia,comentario_varchar")] LICENCIA lICENCIA)
@@ -61,7 +61,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
             return View(lICENCIA);
         }
 
-        // GET: LICENCIAS/Edit/5
+        // GET: LICENCIAs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,9 +77,9 @@ namespace HUMAN_RESOURCES_v1.Controllers
             return View(lICENCIA);
         }
 
-        // POST: LICENCIAS/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: LICENCIAs/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id_licencia,id_empleado,fecha_inicio_licencia,fecha_fin_licencia,motivo_licencia,comentario_varchar")] LICENCIA lICENCIA)
@@ -94,7 +94,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
             return View(lICENCIA);
         }
 
-        // GET: LICENCIAS/Delete/5
+        // GET: LICENCIAs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,7 +109,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
             return View(lICENCIA);
         }
 
-        // POST: LICENCIAS/Delete/5
+        // POST: LICENCIAs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

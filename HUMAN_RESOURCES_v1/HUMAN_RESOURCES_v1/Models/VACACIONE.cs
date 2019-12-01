@@ -15,6 +15,7 @@ namespace HUMAN_RESOURCES_v1.Models
 
     public partial class VACACIONE
     {
+
         public int id_vacaciones { get; set; }
         [Required]
         [Display(Name = "Codigo del Empleado (ID)")]

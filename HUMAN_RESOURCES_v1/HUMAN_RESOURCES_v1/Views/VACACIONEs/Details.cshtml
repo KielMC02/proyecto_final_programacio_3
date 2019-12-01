@@ -1,0 +1,50 @@
+﻿@model HUMAN_RESOURCES_v1.Models.VACACIONE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VACACIONE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_inicio_vacaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inicio_vacaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_fin_vaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_fin_vaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario_vacaiones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario_vacaiones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLEADO.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLEADO.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_vacaciones }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

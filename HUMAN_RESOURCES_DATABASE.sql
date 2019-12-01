@@ -57,6 +57,8 @@ create table SALIDA_EMPLEADOS
 	id_emplado int not null,
 	tipo_salida varchar(10) not null
 )
+Alter table SALIDA_EMPLEADOS
+add feha_salida date not null
 /*------------Insertar Registros-------------------*/
 /*------------------------------------------------*/
 

@@ -10,112 +10,112 @@ using HUMAN_RESOURCES_v1.Models;
 
 namespace HUMAN_RESOURCES_v1.Controllers
 {
-    public class PERMISOSController : Controller
+    public class LICENCIASController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
 
-        // GET: PERMISOS
+        // GET: LICENCIAS
         public ActionResult Index()
         {
-            var pERMISOS = db.PERMISOS.Include(p => p.EMPLEADO);
-            return View(pERMISOS.ToList());
+            var lICENCIAS = db.LICENCIAS.Include(l => l.EMPLEADO);
+            return View(lICENCIAS.ToList());
         }
 
-        // GET: PERMISOS/Details/5
+        // GET: LICENCIAS/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PERMISO pERMISO = db.PERMISOS.Find(id);
-            if (pERMISO == null)
+            LICENCIA lICENCIA = db.LICENCIAS.Find(id);
+            if (lICENCIA == null)
             {
                 return HttpNotFound();
             }
-            return View(pERMISO);
+            return View(lICENCIA);
         }
 
-        // GET: PERMISOS/Create
+        // GET: LICENCIAS/Create
         public ActionResult Create()
         {
             ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre");
             return View();
         }
 
-        // POST: PERMISOS/Create
+        // POST: LICENCIAS/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_permiso,id_empleado,fecha_inicio_permiso,fecha_fin_permiso,comentario_permiso")] PERMISO pERMISO)
+        public ActionResult Create([Bind(Include = "id_licencia,id_empleado,fecha_inicio_licencia,fecha_fin_licencia,motivo_licencia,comentario_varchar")] LICENCIA lICENCIA)
         {
             if (ModelState.IsValid)
             {
-                db.PERMISOS.Add(pERMISO);
+                db.LICENCIAS.Add(lICENCIA);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", pERMISO.id_empleado);
-            return View(pERMISO);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", lICENCIA.id_empleado);
+            return View(lICENCIA);
         }
 
-        // GET: PERMISOS/Edit/5
+        // GET: LICENCIAS/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PERMISO pERMISO = db.PERMISOS.Find(id);
-            if (pERMISO == null)
+            LICENCIA lICENCIA = db.LICENCIAS.Find(id);
+            if (lICENCIA == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", pERMISO.id_empleado);
-            return View(pERMISO);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", lICENCIA.id_empleado);
+            return View(lICENCIA);
         }
 
-        // POST: PERMISOS/Edit/5
+        // POST: LICENCIAS/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_permiso,id_empleado,fecha_inicio_permiso,fecha_fin_permiso,comentario_permiso")] PERMISO pERMISO)
+        public ActionResult Edit([Bind(Include = "id_licencia,id_empleado,fecha_inicio_licencia,fecha_fin_licencia,motivo_licencia,comentario_varchar")] LICENCIA lICENCIA)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pERMISO).State = EntityState.Modified;
+                db.Entry(lICENCIA).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", pERMISO.id_empleado);
-            return View(pERMISO);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", lICENCIA.id_empleado);
+            return View(lICENCIA);
         }
 
-        // GET: PERMISOS/Delete/5
+        // GET: LICENCIAS/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PERMISO pERMISO = db.PERMISOS.Find(id);
-            if (pERMISO == null)
+            LICENCIA lICENCIA = db.LICENCIAS.Find(id);
+            if (lICENCIA == null)
             {
                 return HttpNotFound();
             }
-            return View(pERMISO);
+            return View(lICENCIA);
         }
 
-        // POST: PERMISOS/Delete/5
+        // POST: LICENCIAS/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PERMISO pERMISO = db.PERMISOS.Find(id);
-            db.PERMISOS.Remove(pERMISO);
+            LICENCIA lICENCIA = db.LICENCIAS.Find(id);
+            db.LICENCIAS.Remove(lICENCIA);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

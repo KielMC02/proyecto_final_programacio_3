@@ -4,11 +4,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>CREACION DE PERMISO PARA EMPLEADOS</h2>
+
+<br />
+<br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("ASIGNAR PERMISO", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
 </p>
+
+<br />
+<br />
+
 <table class="table">
     <tr>
         <th>
@@ -26,26 +33,31 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_inicio_permiso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_fin_permiso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.comentario_permiso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMPLEADO.nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_permiso }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_permiso }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_permiso })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.fecha_inicio_permiso)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.fecha_fin_permiso)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.comentario_permiso)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EMPLEADO.nombre)
+    </td>
+    <td class="btn-group btn-group-sm col-lg-3">
+        @Html.ActionLink("Editar", "Edit", new { id = item.id_permiso }, htmlAttributes: new { @class = "btn btn-warning" })
+        @Html.ActionLink("Detalles", "Details", new { id = item.id_permiso }, htmlAttributes: new { @class = "btn btn-success" })
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.id_permiso }, htmlAttributes: new { @class = "btn btn-danger" })
+        
+    </td>
+</tr>
+    }
 
 </table>
+<p>
+    @Html.ActionLink("VOLVER A LA LISTA", "Index", "EMPLEADOS", null, htmlAttributes: new { @class = "btn btn-danger" })
+</p>

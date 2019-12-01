@@ -1,0 +1,68 @@
+﻿@model HUMAN_RESOURCES_v1.Models.LICENCIA
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>ESTA SEGURO DE QUE QUIERE ELIMINAR EL REGISTRO DE ESTA LICENCIA?</h3>
+<h5>RECUERDE QUE NO HAY RECUPERACION DE DATOS</h5>
+<br />
+<br />
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_inicio_licencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inicio_licencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_fin_licencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_fin_licencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.motivo_licencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.motivo_licencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario_varchar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario_varchar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLEADO.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLEADO.nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="ELIMINAR" class="btn btn-warning" /> |
+    @Html.ActionLink("Volver a Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
+</div>
+    }
+</div>

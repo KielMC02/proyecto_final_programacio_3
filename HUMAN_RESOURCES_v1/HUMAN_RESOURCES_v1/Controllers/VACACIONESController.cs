@@ -10,112 +10,108 @@ using HUMAN_RESOURCES_v1.Models;
 
 namespace HUMAN_RESOURCES_v1.Controllers
 {
-    public class PERMISOSController : Controller
+    public class VACACIONESController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
 
-        // GET: PERMISOS
+        
         public ActionResult Index()
         {
-            var pERMISOS = db.PERMISOS.Include(p => p.EMPLEADO);
-            return View(pERMISOS.ToList());
+            var vACACIONES = db.VACACIONES.Include(v => v.EMPLEADO);
+            return View(vACACIONES.ToList());
         }
 
-        // GET: PERMISOS/Details/5
+      
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PERMISO pERMISO = db.PERMISOS.Find(id);
-            if (pERMISO == null)
+            VACACIONE vACACIONE = db.VACACIONES.Find(id);
+            if (vACACIONE == null)
             {
                 return HttpNotFound();
             }
-            return View(pERMISO);
+            return View(vACACIONE);
         }
 
-        // GET: PERMISOS/Create
+        
         public ActionResult Create()
         {
             ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre");
             return View();
         }
 
-        // POST: PERMISOS/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_permiso,id_empleado,fecha_inicio_permiso,fecha_fin_permiso,comentario_permiso")] PERMISO pERMISO)
+        public ActionResult Create([Bind(Include = "id_vacaciones,id_empleado,fecha_inicio_vacaciones,fecha_fin_vaciones,comentario_vacaiones")] VACACIONE vACACIONE)
         {
             if (ModelState.IsValid)
             {
-                db.PERMISOS.Add(pERMISO);
+                db.VACACIONES.Add(vACACIONE);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", pERMISO.id_empleado);
-            return View(pERMISO);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", vACACIONE.id_empleado);
+            return View(vACACIONE);
         }
 
-        // GET: PERMISOS/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PERMISO pERMISO = db.PERMISOS.Find(id);
-            if (pERMISO == null)
+            VACACIONE vACACIONE = db.VACACIONES.Find(id);
+            if (vACACIONE == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", pERMISO.id_empleado);
-            return View(pERMISO);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", vACACIONE.id_empleado);
+            return View(vACACIONE);
         }
 
-        // POST: PERMISOS/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_permiso,id_empleado,fecha_inicio_permiso,fecha_fin_permiso,comentario_permiso")] PERMISO pERMISO)
+        public ActionResult Edit([Bind(Include = "id_vacaciones,id_empleado,fecha_inicio_vacaciones,fecha_fin_vaciones,comentario_vacaiones")] VACACIONE vACACIONE)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pERMISO).State = EntityState.Modified;
+                db.Entry(vACACIONE).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", pERMISO.id_empleado);
-            return View(pERMISO);
+            ViewBag.id_empleado = new SelectList(db.EMPLEADOS, "id_empleado", "nombre", vACACIONE.id_empleado);
+            return View(vACACIONE);
         }
 
-        // GET: PERMISOS/Delete/5
+        
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PERMISO pERMISO = db.PERMISOS.Find(id);
-            if (pERMISO == null)
+            VACACIONE vACACIONE = db.VACACIONES.Find(id);
+            if (vACACIONE == null)
             {
                 return HttpNotFound();
             }
-            return View(pERMISO);
+            return View(vACACIONE);
         }
 
-        // POST: PERMISOS/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PERMISO pERMISO = db.PERMISOS.Find(id);
-            db.PERMISOS.Remove(pERMISO);
+            VACACIONE vACACIONE = db.VACACIONES.Find(id);
+            db.VACACIONES.Remove(vACACIONE);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

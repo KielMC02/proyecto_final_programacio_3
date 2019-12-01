@@ -174,12 +174,12 @@
     <Compile Include="Controllers\DEPARTAMENTOSController.cs" />
     <Compile Include="Controllers\EMPLEADOSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LICENCIAsController.cs" />
+    <Compile Include="Controllers\LICENCIASController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NOMINAsController.cs" />
+    <Compile Include="Controllers\NOMINASController.cs" />
     <Compile Include="Controllers\PERMISOSController.cs" />
     <Compile Include="Controllers\SALIDA_EMPLEADOSController.cs" />
-    <Compile Include="Controllers\VACACIONEsController.cs" />
+    <Compile Include="Controllers\VACACIONESController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

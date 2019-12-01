@@ -10,7 +10,7 @@ using HUMAN_RESOURCES_v1.Models;
 
 namespace HUMAN_RESOURCES_v1.Controllers
 {
-    public class VACACIONEsController : Controller
+    public class VACACIONESController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
 

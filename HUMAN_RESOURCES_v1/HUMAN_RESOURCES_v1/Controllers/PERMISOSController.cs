@@ -128,5 +128,50 @@ namespace HUMAN_RESOURCES_v1.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
+
+
+        public ActionResult PermisosTomados()
+        {           
+            return View(db.PERMISOS.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult PermisosTomados(string Nombusqueda)
+        {
+
+
+            var lista = from x in db.PERMISOS
+                        select x;
+
+
+            if (string.IsNullOrEmpty(Nombusqueda))
+            {
+                return View(db.PERMISOS.ToList());
+            }
+            else if (Nombusqueda != null)
+            {
+                lista = lista.Where(a => a.EMPLEADO.nombre.Equals(Nombusqueda));
+                return View(lista);
+
+            }
+            else
+            {
+                return View(db.EMPLEADOS.ToList());
+            }
+          
+        }
+
+
+
+
+
+
+
+
     }
 }

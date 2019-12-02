@@ -4,6 +4,10 @@
     ViewBag.Title = "Delete";
 }
 
+<br />
+<br />
+<br />
+
 <h2>Borrar Departamento</h2>
 
 <h3>Esta seguro de Eliminar este Departamento?</h3>
@@ -21,12 +25,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-            @Html.ActionLink("Volver a Lista", "Index",null,htmlAttributes:new {@class="btn btn-primary" })
+            @Html.ActionLink("Volver a Lista", "Index", null, htmlAttributes: new { @class = "btn btn-primary" })
         </div>
     }
 </div>

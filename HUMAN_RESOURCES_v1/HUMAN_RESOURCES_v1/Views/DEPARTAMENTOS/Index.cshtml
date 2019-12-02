@@ -4,10 +4,14 @@
     ViewBag.Title = "Index";
 }
 
+<br />
+<br />
+<br />
+
 <h2>Listado de Departamentos</h2>
 
 <p>
-    @Html.ActionLink("Agregar Departamento", "Create",null,htmlAttributes:new {@class="btn btn-primary"})
+    @Html.ActionLink("Agregar Departamento", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -17,17 +21,18 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre_departamento)
-        </td>
-        <td class="btn-group">
-            @Html.ActionLink("Editar", "Edit", new { id=item.id_departamento },htmlAttributes:new {@class="btn btn-warning" })
-            @Html.ActionLink("Detalles", "Details", new { id=item.id_departamento },htmlAttributes:new {@class="btn btn-success" })
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_departamento },htmlAttributes:new {@class="btn btn-danger" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_departamento)
+            </td>
+            <td class="btn-group">
+                @Html.ActionLink("Editar", "Edit", new { id = item.id_departamento }, htmlAttributes: new { @class = "btn btn-warning" })
+                @Html.ActionLink("Detalles", "Details", new { id = item.id_departamento }, htmlAttributes: new { @class = "btn btn-success" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_departamento }, htmlAttributes: new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>

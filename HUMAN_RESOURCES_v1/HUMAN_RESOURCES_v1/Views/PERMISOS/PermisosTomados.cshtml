@@ -1,25 +1,42 @@
 ﻿@model IEnumerable<HUMAN_RESOURCES_v1.Models.PERMISO>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "PermisosTomados";
 }
+
 <br />
 <br />
 <br />
 
-<h2>CREACION DE PERMISO PARA EMPLEADOS</h2>
+<h2>Permisos Tomados</h2>
 
 <br />
 <br />
+<br />
 
-<p>
-    @Html.ActionLink("ASIGNAR PERMISO", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
-</p>
-<div>
-    @Html.ActionLink("FILTRAR PERMISOS POR NOMBRE", "PermisosTomados", null, htmlAttributes: new { @class = "btn btn-warning" })
-</div>
+
+<table>
+    <tr>
+        <th class="col-md-8">
+            <label class="alert-success">BUSCAR MEDIANTE NOMBRE</label><br /><br />
+            <form method="post">
+                <input type="text" name="Nombusqueda" placeholder="NOMBRE A BUSCAR" />
+                <input type="submit" value="BUSCAR" class="btn-warning" />
+            </form>
+            <br />
+        </th>
+
+    </tr>
+</table>
+
+
 <br />
 <br />
+<br />
+
+
+
+
 
 <table class="table">
     <tr>
@@ -53,16 +70,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EMPLEADO.nombre)
             </td>
-            <td class="btn-group btn-group-sm col-lg-3">
-                @Html.ActionLink("Editar", "Edit", new { id = item.id_permiso }, htmlAttributes: new { @class = "btn btn-warning" })
-                @Html.ActionLink("Detalles", "Details", new { id = item.id_permiso }, htmlAttributes: new { @class = "btn btn-success" })
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_permiso }, htmlAttributes: new { @class = "btn btn-danger" })
-
-            </td>
+            
         </tr>
     }
 
 </table>
-<p>
-    @Html.ActionLink("VOLVER A LA LISTA", "Index", "EMPLEADOS", null, htmlAttributes: new { @class = "btn btn-danger" })
-</p>
+<div>
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
+</div>

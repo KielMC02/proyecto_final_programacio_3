@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "Details";
 }
+<br />
+<br />
+<br />
 
 <h3>Detalles Nomina</h3>
 
@@ -29,6 +32,6 @@
     </dl>
 </div>
 <p class="btn-group">
-    @Html.ActionLink("Editar", "Edit", new { id = Model.id_codigo },htmlAttributes:new {@class="btn btn-warning" })
-    @Html.ActionLink("Volver a la Lista", "Index",null, htmlAttributes: new {@class="btn btn-danger" })
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_codigo }, htmlAttributes: new { @class = "btn btn-warning" })
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </p>

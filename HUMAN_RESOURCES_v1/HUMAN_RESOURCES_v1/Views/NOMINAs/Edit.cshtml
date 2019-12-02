@@ -3,13 +3,16 @@
 @{
     ViewBag.Title = "Edit";
 }
+<br />
+<br />
+<br />
 
 <h3>Editar Nomina</h3>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Nomina Seleccionada</h4>
         <hr />
@@ -41,5 +44,5 @@
 }
 
 <div>
-    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new {@class="btn btn-danger" })
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </div>

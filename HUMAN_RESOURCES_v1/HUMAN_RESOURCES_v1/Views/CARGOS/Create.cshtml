@@ -3,15 +3,20 @@
 @{
     ViewBag.Title = "Create";
 }
-    <center>
-        <h3>Crear un nuevo Cargo</h3>
-    </center>
+
+<br />
+<br />
+<br />
+
+<center>
+    <h3>Crear un nuevo Cargo</h3>
+</center>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Llene el formulario para crear un Cargo</h4>
         <hr />
@@ -33,7 +38,7 @@
 }
 
 <div>
-    @Html.ActionLink("Volver a la Lista", "Index",null,htmlAttributes:new { @class="btn btn-danger"})
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </div>
 
 @section Scripts {

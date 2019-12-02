@@ -1,0 +1,101 @@
+﻿@model IEnumerable<HUMAN_RESOURCES_v1.Models.EMPLEADO>
+
+@{
+    ViewBag.Title = "SalidadEmp";
+}
+
+
+
+<br />
+<br />
+
+<h2>SALIDA DE EMPLEADOS POR MES ESPECIFICADO</h2>
+<br />
+<br />
+
+<table>
+    <tr>
+        <th class="col-md-8">
+            <label class="alert-success">BUSCAR MEDIANTE FECHA DE SALIDA</label><br /><br />
+            <form method="post">
+                <input type="datetime" name="date" placeholder="FECHA MM/DD/YYYY" />
+                <input type="submit" value="BUSCAR" class="btn-warning" />
+            </form>
+            <br />
+        </th>
+
+</table>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_ingreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CARGO.nombre_cargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPARTAMENTO.nombre_departamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SALIDA_EMPLEADOS.tipo_salida)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_ingreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CARGO.nombre_cargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTAMENTO.nombre_departamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SALIDA_EMPLEADOS.tipo_salida)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_empleado }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_empleado }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_empleado })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
+</div>

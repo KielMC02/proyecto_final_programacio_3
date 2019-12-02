@@ -203,5 +203,78 @@ namespace HUMAN_RESOURCES_v1.Controllers
 
 
 
+        public ActionResult EntradaEmp()
+        {
+
+            return View(db.EMPLEADOS.ToList());
+
+        }
+        [HttpPost]
+        public ActionResult EntradaEmp(DateTime date)
+        {
+
+
+            var lista2 = from x in db.EMPLEADOS
+                        select x;
+         
+
+            if (date != null) 
+            {
+                lista2 = lista2.Where(a => DbFunctions.TruncateTime(a.fecha_ingreso) >= date);
+                return View(lista2);
+
+               
+            }
+           
+            else
+            {
+                
+                return View(db.EMPLEADOS.ToList());
+            }
+        }
+
+
+
+
+
+        public ActionResult SalidadEmp()
+        {
+
+            var lista2 = from x in db.EMPLEADOS
+                         select x;
+
+
+
+            return View(db.EMPLEADOS.ToList());
+
+        }
+        [HttpPost]
+        public ActionResult SalidadEmp(DateTime date)
+        {
+
+
+            var lista2 = from x in db.EMPLEADOS
+                         select x;
+
+
+            if (date.Date >= date)
+            {
+                lista2 = lista2.Where(a => DbFunctions.TruncateTime(a.SALIDA_EMPLEADOS.feha_salida) <= date);
+                return View(lista2);
+
+
+            }
+
+            else
+            {
+
+                return View(db.EMPLEADOS.ToList());
+            }
+        }
+
+
+
+
+
     }
 }

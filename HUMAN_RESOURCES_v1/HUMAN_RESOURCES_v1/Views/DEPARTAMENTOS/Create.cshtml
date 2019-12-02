@@ -4,13 +4,18 @@
     ViewBag.Title = "Create";
 }
 
+
+<br />
+<br />
+<br />
+
 <h3>Agregar Nuevo Departamento</h3>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Llene el formulario a continuacion</h4>
         <hr />
@@ -32,7 +37,7 @@
 }
 
 <div>
-    @Html.ActionLink("Volver a la Lista", "Index",null,htmlAttributes:new {@class="btn btn-danger"})
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </div>
 
 @section Scripts {

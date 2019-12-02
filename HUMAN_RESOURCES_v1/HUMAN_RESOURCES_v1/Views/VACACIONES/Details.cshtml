@@ -3,11 +3,13 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
+<br />
+<br />
+<br />
+<h2>DETALLES DE LAS VACACIONES</h2>
 
 <div>
-    <h4>VACACIONE</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -45,6 +47,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_vacaciones }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("EDITAR", "Edit", new { id = Model.id_vacaciones }, htmlAttributes: new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Volver a Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </p>
+

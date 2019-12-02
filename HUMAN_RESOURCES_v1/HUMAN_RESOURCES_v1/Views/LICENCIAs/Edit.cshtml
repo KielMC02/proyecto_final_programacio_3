@@ -3,13 +3,16 @@
 @{
     ViewBag.Title = "Edit";
 }
+<br />
+<br />
+<br />
 
-<h2>Edit</h2>
+<h2>EDITAR REGISTRO DE LICENCIA</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>LICENCIA</h4>
         <hr />
@@ -58,12 +61,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="GUARDAR CAMBIOS" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </div>

@@ -3,8 +3,11 @@
 @{
     ViewBag.Title = "Details";
 }
+<br />
+<br />
+<br />
 
-<h2>Details</h2>
+<h2>DETALLE LICENCIA</h2>
 
 <div>
     <h4>LICENCIA</h4>
@@ -53,6 +56,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_licencia }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("EDITAR", "Edit", new { id = Model.id_licencia }, htmlAttributes: new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Volver a Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </p>

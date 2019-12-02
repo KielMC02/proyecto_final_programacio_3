@@ -4,6 +4,11 @@
     ViewBag.Title = "Index";
 }
 
+
+<br />
+<br />
+<br />
+
 <h3>LISTA DE TODOS LOS EMPLEADOS DE LA EMPRESA</h3>
 <br />
 <br />
@@ -134,3 +139,20 @@
 
     </table>
 </div>
+
+<table>
+    <tr>
+      
+        <th class="col-md-pull-4">
+            <p>
+                @Html.ActionLink("ENTRADA DE EMPLEADOS", "EntradaEmp", null, htmlAttributes: new { @class = "btn btn-success" })
+            </p>
+        </th>
+        <th class="col-md-4">
+            <p>
+                @Html.ActionLink("SALIDA DE EMPLEADOS", "SalidadEmp", null, htmlAttributes: new { @class = "btn btn-danger " })
+            </p>
+        </th>
+
+    </tr>
+</table>

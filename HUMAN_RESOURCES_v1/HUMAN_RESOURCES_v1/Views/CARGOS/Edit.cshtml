@@ -3,15 +3,20 @@
 @{
     ViewBag.Title = "Edit";
 }
-    <center>
-        <h3>Editar Cargo</h3>
-    </center>
+
+<br />
+<br />
+<br />
+
+<center>
+    <h3>Editar Cargo</h3>
+</center>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Cargo Seleccionado</h4>
         <hr />
@@ -35,7 +40,7 @@
 }
 
 <div>
-    @Html.ActionLink("Volver a la Lista", "Index",null,htmlAttributes:new { @class="btn btn-danger"})
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </div>
 
 @section Scripts {

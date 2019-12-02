@@ -3,6 +3,10 @@
 @{
     ViewBag.Title = "Delete";
 }
+<br />
+<br />
+<br />
+
 
 <h2>Eliminar Empleado</h2>
 
@@ -85,12 +89,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-            @Html.ActionLink("Volver a la Lista", "Index",null,htmlAttributes:new { @class="btn btn-primary"})
+            @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-primary" })
         </div>
     }
 </div>

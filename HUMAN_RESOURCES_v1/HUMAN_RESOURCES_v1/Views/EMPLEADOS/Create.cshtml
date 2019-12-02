@@ -6,15 +6,18 @@
     ViewBag.Title = "Create";
 }
 
+<br />
+<br />
+<br />
 
-    <center>
-        <h3>Agregar Nuevo Empleado</h3>
-    </center>
+<center>
+    <h3>Agregar Nuevo Empleado</h3>
+</center>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h5>Llene el Formulario a continuacion</h5>
         <hr />
@@ -62,7 +65,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.fecha_ingreso, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.fecha_ingreso, new { htmlAttributes = new { @class = "form-control",@type="date" } })
+                @Html.EditorFor(model => model.fecha_ingreso, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
 
                 @Html.ValidationMessageFor(model => model.fecha_ingreso, "", new { @class = "text-danger" })
             </div>
@@ -79,18 +82,18 @@
         <div class="form-group">
             @Html.LabelFor(model => model.estatus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.estatus,new SelectList(new[] {"ACTIVO","INACTIVO" }),"Seleccione un Estatus", htmlAttributes: new { @class="form-control"})
+                @Html.DropDownListFor(model => model.estatus, new SelectList(new[] { "ACTIVO", "INACTIVO" }), "Seleccione un Estatus", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.estatus, "", new { @class = "text-danger" })
             </div>
         </div>
 
         @*<div class="form-group">
-            @Html.LabelFor(model => model.id_salida_empleado, "Codigo Salida Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Codigo Salida Empleado", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.id_salida_empleado, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
+                @Html.LabelFor(model => model.id_salida_empleado, "Codigo Salida Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Codigo Salida Empleado", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.id_salida_empleado, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -102,7 +105,7 @@
 
 
 <div>
-    @Html.ActionLink("Volver a la Lista", "Index",null,htmlAttributes: new { @class="btn btn-danger"})
+    @Html.ActionLink("Volver a la Lista", "Index", null, htmlAttributes: new { @class = "btn btn-danger" })
 </div>
 
 @section Scripts {

@@ -160,18 +160,18 @@ namespace HUMAN_RESOURCES_v1.Controllers
         [HttpPost]
         public ActionResult ActivosEmp(string Nombusqueda, string Depbusqueda)
         {
-
+            if (string.IsNullOrEmpty(Nombusqueda) && string.IsNullOrEmpty(Depbusqueda))
+            {
+                return View(db.EMPLEADOS.ToList());
+            }
 
             var lista = from x in db.EMPLEADOS
                         select x;
             var lista2 = from y in db.EMPLEADOS
                          select y;
 
-            if (string.IsNullOrEmpty(Nombusqueda) && string.IsNullOrEmpty(Depbusqueda))
-            {
-                return View(db.EMPLEADOS.ToList());
-            }
-            else if (Nombusqueda != null)
+
+             if (Nombusqueda != null)
             {
                 lista2 = lista2.Where(a => a.nombre.Contains(Nombusqueda));
                 return View(lista2);
@@ -212,7 +212,11 @@ namespace HUMAN_RESOURCES_v1.Controllers
         [HttpPost]
         public ActionResult EntradaEmp(DateTime date)
         {
+            if (date == null)
+            {
 
+                return View(db.EMPLEADOS.ToList());
+            }
 
             var lista2 = from x in db.EMPLEADOS
                         select x;
@@ -220,17 +224,14 @@ namespace HUMAN_RESOURCES_v1.Controllers
 
             if (date != null) 
             {
-                lista2 = lista2.Where(a => DbFunctions.TruncateTime(a.fecha_ingreso) >= date);
+                lista2 = lista2.Where(a => a.fecha_ingreso.Month == date.Month);
+                //lista2 = lista2.Where(a => a.fecha_ingreso.Year == date.Year);
                 return View(lista2);
 
                
             }
-           
-            else
-            {
-                
-                return View(db.EMPLEADOS.ToList());
-            }
+            return View(db.EMPLEADOS.ToList());
+
         }
 
 

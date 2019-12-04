@@ -237,6 +237,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\Departamentos.png" />
+    <Content Include="Imagenes\empleados.png" />
+    <Content Include="Imagenes\nomina.jpg" />
+    <Content Include="Imagenes\Nomina.png" />
+    <Content Include="Imagenes\recursos-humanos-funciones.jpg" />
+    <Content Include="Imagenes\seleccion-personal.jpg" />
     <Content Include="Models\HUMAN-RESOURCES.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HUMAN-RESOURCES.edmx</DependentUpon>
@@ -256,6 +262,7 @@
     <Content Include="Models\HUMAN-RESOURCES.edmx.diagram">
       <DependentUpon>HUMAN-RESOURCES.edmx</DependentUpon>
     </Content>
+    <Content Include="Imagenes\1504859246582_1.webp" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

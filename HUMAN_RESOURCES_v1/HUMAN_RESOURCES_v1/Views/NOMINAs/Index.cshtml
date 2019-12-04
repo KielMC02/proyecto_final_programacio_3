@@ -8,6 +8,18 @@
 <br />
 
 <h3>Listado de Nominas</h3>
+<table>
+    <tr>
+        <th class="col-md-8">
+            <label class="alert-success">BUSCAR MEDIANTE FECHA DE ENTRADA</label><br /><br />
+            <form method="post">
+                <input type="date" name="date" required />
+                <input type="submit" value="BUSCAR" class="btn-warning" />
+            </form>
+            <br />
+        </th>
+
+</table>
 
 <p>
     @Html.ActionLink("Crear Nueva Nomina", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })

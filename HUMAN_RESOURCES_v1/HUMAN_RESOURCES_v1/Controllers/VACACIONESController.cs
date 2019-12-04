@@ -13,7 +13,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
     public class VACACIONEsController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
-
+        [Authorize]
         // GET: VACACIONEs
         public ActionResult Index()
         {

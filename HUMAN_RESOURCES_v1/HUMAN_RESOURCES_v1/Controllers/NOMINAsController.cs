@@ -13,14 +13,28 @@ namespace HUMAN_RESOURCES_v1.Controllers
     public class NOMINASController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
-
-        // GET: NOMINAs
         [Authorize]
+        // GET: NOMINAs
         public ActionResult Index()
         {
             return View(db.NOMINAS.ToList());
         }
-
+        [HttpPost]
+        public ActionResult Index(DateTime date)
+        {
+            var lista = from x in db.NOMINAS
+                        select x;
+            if (date == null)
+            {
+                return View(db.NOMINAS.ToList());
+            }
+            if (date != null)
+            {
+                lista = lista.Where(a => a.fecha_nomina.Year == date.Year);
+                return View(lista);
+            }
+            return View(db.NOMINAS.ToList());
+        }
         // GET: NOMINAs/Details/5
         public ActionResult Details(int? id)
         {

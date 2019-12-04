@@ -13,6 +13,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
     public class PERMISOSController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
+        [Authorize]
 
         // GET: PERMISOS
         public ActionResult Index()

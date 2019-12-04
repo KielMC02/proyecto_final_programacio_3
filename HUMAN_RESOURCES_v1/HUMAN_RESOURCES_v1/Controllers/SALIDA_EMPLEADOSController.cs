@@ -13,11 +13,29 @@ namespace HUMAN_RESOURCES_v1.Controllers
     public class SALIDA_EMPLEADOSController : Controller
     {
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
-
-       
+        [Authorize]
         public ActionResult Index()
         {
+
             return View(db.SALIDA_EMPLEADOS.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Index(DateTime date)
+        {
+            var lista = from x in db.SALIDA_EMPLEADOS
+                        select x;
+            if (date == null)
+            {
+                return View(db.SALIDA_EMPLEADOS.ToList());
+            }
+            if (date != null)
+            {
+                lista = lista.Where(a => a.feha_salida.Month == date.Month);
+                return View(lista);
+            }
+            return View(db.SALIDA_EMPLEADOS.ToList());
+
         }
 
         
@@ -55,7 +73,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_salida_empleado,id_emplado,tipo_salida")] SALIDA_EMPLEADOS sALIDA_EMPLEADOS)
+        public ActionResult Create([Bind(Include = "id_salida_empleado,id_emplado,tipo_salida,feha_salida")] SALIDA_EMPLEADOS sALIDA_EMPLEADOS)
         {
 
 
@@ -87,7 +105,7 @@ namespace HUMAN_RESOURCES_v1.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_salida_empleado,id_emplado,tipo_salida")] SALIDA_EMPLEADOS sALIDA_EMPLEADOS)
+        public ActionResult Edit([Bind(Include = "id_salida_empleado,id_emplado,tipo_salida,feha_salida")] SALIDA_EMPLEADOS sALIDA_EMPLEADOS)
         {
             if (ModelState.IsValid)
             {

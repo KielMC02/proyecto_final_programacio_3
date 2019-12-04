@@ -20,8 +20,9 @@ namespace HUMAN_RESOURCES_v1.Models
         {
             this.EMPLEADOS = new HashSet<EMPLEADO>();
         }
-    
+         [Display(Name ="Salida Empleado")]
         public int id_salida_empleado { get; set; }
+        [Display(Name = "Codigo Empleado")]
         public int id_emplado { get; set; }
         [Display(Name="Tipo de Salida")]
         public string tipo_salida { get; set; }

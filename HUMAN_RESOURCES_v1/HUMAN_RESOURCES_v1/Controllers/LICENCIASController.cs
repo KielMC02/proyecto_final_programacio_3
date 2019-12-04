@@ -12,8 +12,9 @@ namespace HUMAN_RESOURCES_v1.Controllers
 {
     public class LICENCIAsController : Controller
     {
+  
         private HUMAN_RESOURCES_Entities db = new HUMAN_RESOURCES_Entities();
-
+        [Authorize]
         // GET: LICENCIAs
         public ActionResult Index()
         {

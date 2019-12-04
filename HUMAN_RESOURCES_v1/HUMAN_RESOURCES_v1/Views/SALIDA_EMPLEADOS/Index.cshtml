@@ -4,36 +4,57 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+    <body>
+        <br />
+        <br />
+        <br />
+        <br />
+        <form method="post">
+            <label class="alert-success">BUSCAR MEDIANTE FECHA DE ENTRADA</label><br /><br />
+            <input type="date" name="date" required />
+            <input type="submit" value="BUSCAR" class="btn-warning" />
+        </form>
+        <br />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.id_emplado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tipo_salida)
-        </th>
-        <th></th>
-    </tr>
+        <center>
+            <h3>Lista de Salidad de Empleados</h3>
+        </center>
+        <p>
+            @Html.ActionLink("Crear Nueva Salida", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.id_emplado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tipo_salida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.feha_salida)
+                </th>
+                <th></th>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_emplado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tipo_salida)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_salida_empleado }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_salida_empleado }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_salida_empleado })
-        </td>
-    </tr>
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id_emplado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tipo_salida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.feha_salida)
+                    </td>
+                    <td class="btn-group">
+                        @Html.ActionLink("Editar", "Edit", new { id = item.id_salida_empleado }, htmlAttributes: new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Detalles", "Details", new { id = item.id_salida_empleado }, htmlAttributes: new { @class = "btn btn-success" })
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.id_salida_empleado }, htmlAttributes: new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+    </body>

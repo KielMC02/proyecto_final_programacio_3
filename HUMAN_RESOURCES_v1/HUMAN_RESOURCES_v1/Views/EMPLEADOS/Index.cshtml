@@ -8,60 +8,27 @@
 <br />
 <br />
 <br />
+<center>
+    <h3>LISTA DE TODOS LOS EMPLEADOS DE LA EMPRESA</h3>
+    <br />
+    <br />
 
-<h3>LISTA DE TODOS LOS EMPLEADOS DE LA EMPRESA</h3>
-<br />
-<br />
-
-<table>
-    <tr>
-        <th class="col-md-pull-4">
-            <p>
-                @Html.ActionLink("CREAR EMPLEADO", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
-            </p>
-
-
-        </th>
-        <th class="col-md-pull-4">
-            <p>
-                @Html.ActionLink("EMPLEADOS ACTIVOS", "ActivosEmp", null, htmlAttributes: new { @class = "btn btn-success" })
-            </p>
-        </th>
-        <th class="col-md-4">
-            <p>
-                @Html.ActionLink("EMPLEADOS INACTIVOS", "InactivoEmp", null, htmlAttributes: new { @class = "btn btn-danger " })
-            </p>
-        </th>
-
-    </tr>
-</table>
-
-<br />
-<br />
-
-<table>
-    <tr>
-        <th class="col-md-pull-4">
-            <p>
-                @Html.ActionLink("ASIGNAR VACACIONES", "Index", "VACACIONES", null, htmlAttributes: new { @class = "btn btn-info" })
-            </p>
-        </th>
-        <th class="col-md-4">
-            <p>
-                @Html.ActionLink("ASIGNAR - LICENCIA", "Index", "LICENCIAS", null, htmlAttributes: new { @class = "btn btn-warning" })
-            </p>
-        </th>
-        <th class="col-md-4">
-            <p>
-                @Html.ActionLink("ASIGNAR - PERMISOS", "Index", "PERMISOS", null, htmlAttributes: new { @class = "btn btn-warning" })
-            </p>
-        </th>
-    </tr>
-</table>
-
-<br />
-<br />
-
+    <div>
+        @Html.ActionLink("CREAR EMPLEADO", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
+    </div>
+    <br />
+    <div class="btn-group">
+        @Html.ActionLink("EMPLEADOS ACTIVOS", "ActivosEmp", null, htmlAttributes: new { @class = "btn btn-success" })
+        @Html.ActionLink("EMPLEADOS INACTIVOS", "InactivoEmp", null, htmlAttributes: new { @class = "btn btn-danger" })
+        @Html.ActionLink("ENTRADA DE EMPLEADOS", "EntradaEmp", null, htmlAttributes: new { @class = "btn btn-warning" })
+    </div>
+    <br />
+    <div class="btn btn-group">
+        @Html.ActionLink("ASIGNAR VACACIONES", "Index", "VACACIONES", null, htmlAttributes: new { @class = "btn btn-success" })
+        @Html.ActionLink("ASIGNAR - LICENCIA", "Index", "LICENCIAS", null, htmlAttributes: new { @class = "btn btn-danger" })
+        @Html.ActionLink("ASIGNAR - PERMISOS", "Index", "PERMISOS", null, htmlAttributes: new { @class = "btn btn-warning" })
+    </div>
+</center>
 <div class="table-responsive">
     <table class="table table-condensed">
         <thead>
@@ -142,17 +109,13 @@
 
 <table>
     <tr>
-      
-        <th class="col-md-pull-4">
-            <p>
-                @Html.ActionLink("ENTRADA DE EMPLEADOS", "EntradaEmp", null, htmlAttributes: new { @class = "btn btn-success" })
-            </p>
-        </th>
-        <th class="col-md-4">
-            <p>
-                @Html.ActionLink("SALIDA DE EMPLEADOS", "SalidadEmp", null, htmlAttributes: new { @class = "btn btn-danger " })
-            </p>
-        </th>
+
+
+        @*<th class="col-md-4">
+                <p>
+                    @Html.ActionLink("SALIDA DE EMPLEADOS", "SalidadEmp", null, htmlAttributes: new { @class = "btn btn-danger " })
+                </p>
+            </th>*@
 
     </tr>
 </table>
